@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../extjs-4.1.1/resources/css/ext-all.css">
+<script type="text/javascript" src="../../extjs-4.1.1/ext-all-debug.js"></script>
+<script type="text/javascript" src="MyApp/view/GridListener.js"></script>
+<title>GridListener</title>
+</head>
+<body>
+
+<script type="text/javascript">
+Ext.onReady(function(){
+		Ext.Loader.setConfig({
+			enabled:true
+		});
+		var grid = Ext.create('MyApp.view.Grid',{
+			listeners:{ //step 1
+		        itemclick:function (view, record, htmlItem, index, eventObject, opts) {
+		            form.loadRecord(record);
+		        }
+		    },
+		}),
+		 form = Ext.create('MyApp.view.Form',{					
+				    buttons:[
+				        {
+				            text:'Reset',
+				            handler:function () {
+				                this.up('form').getForm().reset();
+				            }
+				        },
+				        {
+				            text:'Save',
+				            formBind:true,
+				            disabled:true,
+							   scope:this,
+				            handler:function () {
+				                var selectionModel = grid.getSelectionModel(), record;//step 2
+				                record = selectionModel.getSelection()[0];
+				                record.set(form.getValues());//step 3
+				                grid.getView().refresh();//step 4
+				            }
+				        }
+				    ]
+			});
+		Ext.create('Ext.container.Viewport', {
+		    layout:{
+		        type:'hbox',
+		        align:'stretch'
+		    },
+		    items:[grid, form]//step 6
+		});
+	});
+
+</script>
+
+</body>
+</html>

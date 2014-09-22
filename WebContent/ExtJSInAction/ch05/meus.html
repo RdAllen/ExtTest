@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../extjs-4.1.1/resources/css/ext-all.css">
+       <script type="text/javascript" src="../../extjs-4.1.1/ext-all-debug.js"></script>
+<title>Menu</title>
+<style type="text/css">
+           body{padding:50px;}
+		  
+           .card-icon32{ background:transparent url('images/card_credit.png') center 0 no-repeat !important;}
+      </style>
+</head>
+<body>
+
+<script type="text/javascript">
+Ext.onReady(function (){
+   var menu1 =Ext.create('Ext.menu.Menu',{
+	    items: [
+		     Ext.create('Ext.menu.Item',{
+			      text: 'Master Card',
+				   listeners: {
+				        click: function (){
+						    document.location ='http://www.baidu.com';
+						}
+				   }
+			      
+			 }),
+			 Ext.create('Ext.menu.Item',{
+			      text: 'Visa',
+			      handler: function (){
+				      document.location ='http://www.baidu.com';   
+				  }	   
+		   }),
+			 Ext.create('Ext.menu.Item',{
+			    text: 'America Express',
+		       handler : function (){
+				      document.location ='http://www.baidu.com';   
+				  }	 
+		   })
+		]
+	});
+	
+	var button1 = Ext.create('Ext.button.Button',{
+	    text: 'payment',
+		 scale: 'large',
+		 iconCls :'card-icon32',
+		 menu: menu1,
+		 renderTo: Ext.getBody()
+	});
+	
+	var menu2 =Ext.create('Ext.menu.Menu',{
+	    items: [
+		     Ext.create('Ext.menu.Item',{
+			      text: 'Master Card',
+			      menu: menu1	  
+			}),
+			 Ext.create('Ext.menu.Item',{text: 'Visa'}),
+			 Ext.create('Ext.menu.Item',{text: 'America Express'})
+		]
+	});
+	
+	var button2 = Ext.create('Ext.button.Button',{
+	    text: 'payment',
+		 scale: 'large',
+		 iconCls :'card-icon32',
+		 menu: menu2,
+		 renderTo: Ext.getBody()
+	});
+	
+	
+	
+
+});
+
+</script>
+
+</body>
+</html>

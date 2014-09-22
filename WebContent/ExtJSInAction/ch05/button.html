@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+       <link rel="stylesheet" type="text/css" href="../../extjs-4.1.1/resources/css/ext-all.css">
+       <script type="text/javascript" src="../../extjs-4.1.1/ext-all-debug.js"></script> 
+       <script type="text/javascript" src="myApp/users/Employee.js"></script>
+	   <style type="text/css">
+           body{padding:50px;}
+		   .remove-icon16{ background:transparent url('images/delete16.png') center 0 no-repeat !important; }
+           .remove-icon24{ background:transparent url('images/delete24.png') center 0 no-repeat  !important;}
+           .remove-icon32{ background:transparent url('images/delete32.png') center 0 no-repeat !important;}
+      </style>
+</head>
+<body>
+<script type="text/javascript" >
+    Ext.onReady(function ( ){
+	    var btn1  = Ext.create('Ext.button.Button',{
+		     text : 'remove',
+			  scale: 'small',
+			  iconAlign: 'top',
+			  iconCls: 'remove-icon16',
+			  renderTo : Ext.getBody()
+		});
+		
+		var btn2  = Ext.create('Ext.button.Button',{
+		     text : 'remove',
+			  scale: 'medium',
+			  iconAlign:'bottom',
+			  iconCls: 'remove-icon24',
+			  renderTo : Ext.getBody(),
+			  /*handler : function (){
+			      Ext.Msg.alert('OK');
+			  },*/
+			  listeners: {
+			      click: function (){
+				      
+				  }
+			  },
+			  menu: [
+			     {text: 'item1'},
+				 {text: 'item2'},
+				 {text: 'item3'},
+				 {text: 'item3'}
+			  ]
+		});
+		
+		var btn3  = Ext.create('Ext.button.Button',{
+		     text : 'remove',
+			  scale: 'large',
+			  iconAlign:'left',
+			  iconCls: 'remove-icon32',
+			  renderTo : Ext.getBody()
+		});
+		
+		btn3.on('mouseover', function (){
+		    Ext.Msg.alert('MouseOver !!');
+		});
+		
+		
+	});
+</script>
+</body>
+</html>

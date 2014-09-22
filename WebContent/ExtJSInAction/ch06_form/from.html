@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../extjs-4.1.1/resources/css/ext-all.css">
+<script type="text/javascript" src="../../extjs-4.1.1/ext-all-debug.js"></script>
+<script type="text/javascript" src="MyApp/view/clients/From.js"></script>
+<title>form</title>
+<style type="text/css">
+           body{padding:50px;}
+         .new-icon{background:transparent url(images/page_add.png) 0 0 no-repeat !important;}
+	     .save-icon{background:transparent url(images/disk.png) 0 0 no-repeat !important;}
+	     .delete-icon{background:transparent url(images/delete.png) 0 0 no-repeat !important;}
+      </style>
+</head>
+<body>
+
+<script type="text/javascript">
+Ext.onReady(function (){
+       Ext.create('MyApp.view.clients.Form',{
+	       width: 300,
+			 height: 200,
+			 renderTo: Ext.getBody()
+	   });
+});
+
+</script>
+
+</body>
+</html>

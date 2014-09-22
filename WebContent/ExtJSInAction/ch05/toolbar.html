@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../extjs-4.1.1/resources/css/ext-all.css">
+       <script type="text/javascript" src="../../extjs-4.1.1/ext-all-debug.js"></script>
+<title>my title toolbar</title>
+<style type="text/css">
+           body{padding:50px;}
+		  
+           .new-icon16{ background:transparent url(images/page_add.png) center 0 no-repeat !important; }
+           .save-icon16{background:transparent url(images/disk16.png) center 0 no-repeat !important; }
+          .remove-icon16{background:transparent url(images/delete16.png) center 0 no-repeat !important;}
+          .export-icon16{ background:transparent url(images/page_go.png) center 0 no-repeat !important; }
+          .print-icon16{ background:transparent url(images/printer.png) center 0 no-repeat !important; }
+      </style>
+</head>
+<body>
+
+<script type="text/javascript">
+Ext.onReady(function (){
+    Ext.create('Ext.panel.Panel',{
+	    title: 'my title toolbar',
+		width: 400,
+		height: 200,
+		dockedItems:[{
+		    xtype : 'toolbar',
+			docked: 'top',
+			items: [
+			    {
+				  text:'new', 
+				 listeners: {
+				    click: function (){
+					   document.location = 'http://www.baidu.com'
+					} 
+				 },
+				iconCls:'new-icon16' },
+				 {text: 'Save' ,iconCls:'save-icon16'},
+				 {text: 'Remove' ,iconCls:'remove-icon16'},
+				 {text: 'Export' ,iconCls:'export-icon16'},
+				 {text: 'Print' ,iconCls:'print-icon16'}
+				
+		   ]
+		}],
+		renderTo: Ext.getBody()
+	});
+});
+
+</script>
+
+</body>
+</html>

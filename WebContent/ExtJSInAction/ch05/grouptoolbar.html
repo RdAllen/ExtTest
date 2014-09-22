@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../extjs-4.1.1/resources/css/ext-all.css">
+       <script type="text/javascript" src="../../extjs-4.1.1/ext-all-debug.js"></script>
+<title>my title toolbar</title>
+<style type="text/css">
+           body{padding:10px;}
+		.new-icon16{
+			background:transparent url(images/page_add.png) center 0 no-repeat !important;	
+		}
+		.new-icon32{
+			background:transparent url(images/page_add32.png) center 0 no-repeat !important;	
+		}
+		.save-icon16{
+			background:transparent url(images/disk16.png) center 0 no-repeat !important;	
+		}
+		.remove-icon16{
+			background:transparent url(images/delete16.png) center 0 no-repeat !important;	
+		}
+		.export-icon16{
+			background:transparent url(images/page_go.png) center 0 no-repeat !important;	
+		}
+		.export-icon32{
+			background:transparent url(images/page_go32.png) center 0 no-repeat !important;	
+		}
+		.print-icon16{
+			background:transparent url(images/printer.png) center 0 no-repeat !important;	
+		}
+		.print-icon32{
+			background:transparent url(images/printer32.png) center 0 no-repeat !important;	
+		}
+      </style>
+</head>
+<body>
+
+<script type="text/javascript">
+Ext.onReady(function (){
+    Ext.create('Ext.panel.Panel',{
+	   title: 'my title toolbar',
+		width: 500,
+		height: 200,
+		dockedItems:[{
+		    xtype : 'toolbar',
+			docked: 'top',
+			items: [
+			    {
+				    xtype: 'buttongroup',
+					title: 'action',
+					columns: 2,
+					items: [
+					    {text:'new', iconCls:'new-icon32',scale:'large', rowspan: 2,iconAlign: 'top' ,width:50},
+						 {text: 'Remove' ,iconCls:'remove-icon16'},
+				       {text: 'Save' ,iconCls:'save-icon16'}
+					]
+				
+				},{
+				     xtype: 'buttongroup',
+					  title: 'Print & Export',
+					  defaults: {iconAlign:'top',scale:'large',width:50},
+					  items : [
+					       
+				           {text: 'Export' ,iconCls:'export-icon32'},
+				           {text: 'Print' ,iconCls:'print-icon32'}
+					  ]
+					
+				}
+		   ]
+		}],
+		renderTo: Ext.getBody()
+	});
+});
+
+</script>
+
+</body>
+</html>
