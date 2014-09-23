@@ -2,7 +2,7 @@ Ext.define("KitchenSink.store.Actors",{
     extend: 'Ext.data.Store',
     model: 'KitchenSink.model.Actor',
     
-    pageSize: 5,
+    pageSize: 5,  
     
     /*****  读取数据 *****/
     proxy: {

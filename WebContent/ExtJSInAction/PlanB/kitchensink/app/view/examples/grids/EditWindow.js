@@ -39,7 +39,7 @@ Ext.define("KitchenSink.view.examples.grids.EditWindow",{
    buildButtons:function (){
    
       return [
-          {text: 'save',action: 'save',action:'new'},
+          {text: 'save',action: 'save',action:'new' ,itemId: 'save' },
           {text: 'close',action: 'close',action:'close'}
       ];
    }

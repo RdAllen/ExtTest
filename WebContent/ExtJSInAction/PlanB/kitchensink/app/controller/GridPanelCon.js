@@ -27,7 +27,7 @@ Ext.define('KitchenSink.controller.GridPanelCon', {
        	   //选择 员工下面的toolbar 
           /* '#examplePanel tab[itemid=basicGrid] panel[itemid=gridInfos] toolbar[itemid=toolbar-1061] button[itemid=add]'*/
          /* 'gridInfos button[itemId=add]'*/
-         '#examplePanel panel[itemId=basicGrid] gridpanel[itemId=gridInfos]  toolbar[itemId=toolbar] button[action=add]':{
+         '#examplePanel panel[itemId=basicGrid]  toolbar[itemId=toolbar] button[action=add]':{
            	   //Ext.Msg.alert("heh");
                click : this.addData
           },
