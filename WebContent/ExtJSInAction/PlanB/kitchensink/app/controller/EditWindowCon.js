@@ -35,7 +35,7 @@ Ext.define("KitchenSink.controller.EditWindowCon",{
     	Ext.Msg.alert("Edit From");
 		var form = this.getEditForm();//this.container.down('form');
 		
-
+        form.getValues().getId();
 		Ext.Ajax.request({
 			url : '../../PlanB/kitchensink/serviceside/Modify.jsp',
 			params : form.getForm().getValues(),
